@@ -14,7 +14,12 @@ h1 {
     margin: auto;
 }
 
-.buttoncontainer {
+.buttoncontainer,
+.counter {
     display: flex;
     justify-content: center;
+}
+
+.gamewrapper {
+    display: none;
 }
