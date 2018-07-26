@@ -63,17 +63,14 @@ $.ajax({
     url: queryURL,
     method: "GET"
 }).then(function(response){
+console.log(response);
+var possibleAns = []
+var answers = possibleAns
 
-    var possibleAns = []
-    var answers = possibleAns
-    
-    var correctAns = response.correct_answer;
-    var incorrectAns = response.incorrect_answers;
-    
-    possibleAns.push(correctAns, incorrectAns);
-   
-});
+var correctAns = response.correct_answer;
+var incorrectAns = response.incorrect_answers;
 
+possibleAns.push(correctAns, incorrectAns);
 for (i = 0; i < possibleAns.length; i++){
     possibleAns.sort(function(a, b){return 0.5 - Math.random()});
 $("<button>").text(possibleAns[i]);
@@ -83,6 +80,11 @@ $("#question").text(response.question);
 
 
 console.log(answers);
+
+});
+
+
+
 
 
 
