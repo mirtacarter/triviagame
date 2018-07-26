@@ -3,7 +3,7 @@ $(document).ready(function () {
 //=======================================================================================    
 
     //Counter variables
-    var number = 120;
+    var number = 60;
     var intervalId;
 
 
