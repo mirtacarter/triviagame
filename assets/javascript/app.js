@@ -7,6 +7,7 @@ $(document).ready(function () {
     var intervalId;
 
 
+
 // Counter Functions
 //=======================================================================================   
     //Start button begins game clock, hides itself, and shows the quiz accordion
@@ -52,15 +53,36 @@ $(document).ready(function () {
       }
 
 
+// Trivia Question Retrieval
+//=======================================================================================   
+
+    //Trivia variables
+    var queryURL = "https://opentdb.com/api.php?amount=10&category=21&type=multiple";
+
+$.ajax({
+    url: queryURL,
+    method: "GET"
+}).then(function(response){
+
+    var possibleAns = []
+    var answers = possibleAns
+    
+    var correctAns = response.correct_answer;
+    var incorrectAns = response.incorrect_answers;
+    
+    possibleAns.push(correctAns, incorrectAns);
+   
+});
+
+for (i = 0; i < possibleAns.length; i++){
+    possibleAns.sort(function(a, b){return 0.5 - Math.random()});
+$("<button>").text(possibleAns[i]);
+answers.append("#answers");}
+
+$("#question").text(response.question);
 
 
-
-
-
-
-
-
-
+console.log(answers);
 
 
 
