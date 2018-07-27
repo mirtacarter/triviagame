@@ -5,7 +5,11 @@ $(document).ready(function () {
     //Counter variables
     var number = 60;
     var intervalId;
+    var correct = 0;
+    var incorrect = 0;
 
+    // Game variables
+  
 
 
 // Counter Functions
@@ -17,6 +21,22 @@ $(document).ready(function () {
         $(".gamewrapper").show();
         startClock();
     });
+
+ 
+
+
+        $("input").on("focus", function(){
+        if ($(this).attr("value") === "correct"){
+            correct++;
+        }    
+        
+         });
+
+
+       
+       
+
+    
 
 
     // Counter will decrement by 1 second when game is started
@@ -42,7 +62,7 @@ $(document).ready(function () {
         stop();
 
         //  Alert the user that time is up.
-        alert("Time Up!");
+        alert("Time is up!");
       }
     }
 
@@ -53,9 +73,18 @@ $(document).ready(function () {
       }
 
 
-// Trivia Question Retrieval
+// Trivia Play
 //=======================================================================================   
 
+
+
+$("#gameOver").on("click", function (){
+    $(".counter").hide();
+    $(".gamewrapper").hide();
+    stop();
+    console.log("you got " + correct + " questions right");
+
+});
 
 
 
