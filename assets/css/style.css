@@ -10,6 +10,11 @@ h1 {
     text-shadow: 2px 2px 5px teal;
 }
 
+h3 {
+    text-align: center;
+    text-shadow: 1px 1px 3px teal;
+}
+
 .btn-secondary {
     margin: auto;
 }
@@ -23,9 +28,13 @@ h1 {
 .gamewrapper,
 .content {
     display: none;
+    margin-bottom: 20%;
 }
 
 #question {
     padding: 20px;
 }
 
+img {
+    max-width: 400px;
+}

@@ -82,17 +82,17 @@ var gameOver = $("#gameOver").on("click", function (){
     stop();
     $(".counter").hide();
     $(".gamewrapper").hide();
-    $(".content").show();
+    $("#content").show();
     
     if (correct > 3){
-        $(".content").html("You got " + correct + " questions out of 5 correct! Great job!<br>");
+        $("#content").html("<h3>You got " + correct + " questions out of 5 correct! Great job!</h3><br>");
     
-        $(".content").append("<img src=assets/images/win.jpg>");
+        $("#content").append("<img src=assets/images/win.jpg>");
 
     } else {
-        $(".content").html("You got " + correct + " questions out of 5 correct! Better luck next time!<br>");
+        $("#content").html("<h3>You got " + correct + " questions out of 5 correct! Better luck next time!</h3><br>");
     
-        $(".content").append("<img src=assets/images/lose.jpg>");
+        $("#content").append("<img src=assets/images/lose.jpg>");
     }
 
 });
