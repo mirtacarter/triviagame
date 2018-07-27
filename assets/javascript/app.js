@@ -79,9 +79,10 @@ $(document).ready(function () {
 
 
 $("#gameOver").on("click", function (){
+    stop();
     $(".counter").hide();
     $(".gamewrapper").hide();
-    stop();
+    
     console.log("you got " + correct + " questions right");
 
 });
