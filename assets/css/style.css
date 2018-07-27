@@ -20,7 +20,8 @@ h1 {
     justify-content: center;
 }
 
-.gamewrapper {
+.gamewrapper,
+.content {
     display: none;
 }
 

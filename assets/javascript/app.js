@@ -6,7 +6,7 @@ $(document).ready(function () {
     var number = 60;
     var intervalId;
     var correct = 0;
-    var incorrect = 0;
+
 
     // Game variables
   
@@ -17,9 +17,10 @@ $(document).ready(function () {
     //Start button begins game clock, hides itself, and shows the quiz accordion
     $("#startbutton").on("click", function (){
         $(this).hide();
+        startClock();
         $(".counter").show();
         $(".gamewrapper").show();
-        startClock();
+        
     });
 
  
@@ -61,8 +62,8 @@ $(document).ready(function () {
         //  ...run the stop function.
         stop();
 
-        //  Alert the user that time is up.
-        alert("Time is up!");
+        //  Show game results
+        gameOver;
       }
     }
 
@@ -77,13 +78,22 @@ $(document).ready(function () {
 //=======================================================================================   
 
 
-
-$("#gameOver").on("click", function (){
+var gameOver = $("#gameOver").on("click", function (){
     stop();
     $(".counter").hide();
     $(".gamewrapper").hide();
+    $(".content").show();
     
-    console.log("you got " + correct + " questions right");
+    if (correct > 3){
+        $(".content").html("You got " + correct + " questions out of 5 correct! Great job!<br>");
+    
+        $(".content").append("<img src=assets/images/win.jpg>");
+
+    } else {
+        $(".content").html("You got " + correct + " questions out of 5 correct! Better luck next time!<br>");
+    
+        $(".content").append("<img src=assets/images/lose.jpg>");
+    }
 
 });
 
